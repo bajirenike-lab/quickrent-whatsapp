@@ -1,0 +1,25 @@
+{
+  "name": "whatsapp-rentals-core",
+  "version": "2.0.0",
+  "description": "Interactive, button-driven WhatsApp commercial real estate engine with native flows, list drawers, geo proximity, and Paystack 80/20 inspection payouts.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test tests/engine.test.js",
+    "simulate": "node src/simulator.js"
+  },
+  "keywords": [
+    "whatsapp",
+    "proptech",
+    "interactive-buttons",
+    "whatsapp-flows",
+    "paystack",
+    "nigeria",
+    "africa",
+    "real-estate"
+  ],
+  "author": "Antigravity",
+  "license": "MIT",
+  "type": "commonjs"
+}

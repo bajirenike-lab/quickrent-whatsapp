@@ -1,0 +1,137 @@
+{
+  "version": "3.1",
+  "screens": [
+    {
+      "id": "LANDLORD_LISTING_SCREEN",
+      "title": "List Property (Free)",
+      "data": {},
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          {
+            "type": "Form",
+            "name": "listing_form",
+            "children": [
+              {
+                "type": "TextInput",
+                "name": "title",
+                "label": "Property Title",
+                "required": true,
+                "helper-text": "e.g. Spacious 2-Bedroom Flat in Lekki Phase 1"
+              },
+              {
+                "type": "Dropdown",
+                "name": "category",
+                "label": "Apartment Category",
+                "required": true,
+                "data-source": [
+                  { "id": "self_contain", "title": "Self-Contain / Studio" },
+                  { "id": "one_bed", "title": "1-Bedroom Apartment" },
+                  { "id": "two_bed", "title": "2-Bedroom Flat" },
+                  { "id": "three_bed", "title": "3+ Bedroom Apartment / Duplex" },
+                  { "id": "commercial", "title": "Commercial / Office Space" }
+                ]
+              },
+              {
+                "type": "TextInput",
+                "name": "rent_yearly",
+                "label": "Yearly Rent (₦ Naira)",
+                "input-type": "number",
+                "required": true,
+                "helper-text": "Numbers only, e.g. 2500000"
+              },
+              {
+                "type": "TextInput",
+                "name": "address",
+                "label": "Street Address & City",
+                "required": true,
+                "helper-text": "e.g. Admiralty Way, Lekki, Lagos"
+              },
+              {
+                "type": "Dropdown",
+                "name": "inspection_fee",
+                "label": "Inspection Fee (You keep 80%)",
+                "required": true,
+                "data-source": [
+                  { "id": "4000", "title": "₦4,000 (You get ₦3,200)" },
+                  { "id": "5000", "title": "₦5,000 (You get ₦4,000)" },
+                  { "id": "6000", "title": "₦6,000 (You get ₦4,800)" }
+                ]
+              },
+              {
+                "type": "Footer",
+                "label": "Publish Property",
+                "on-click-action": {
+                  "name": "complete",
+                  "payload": {
+                    "title": "${form.title}",
+                    "category": "${form.category}",
+                    "rent_yearly": "${form.rent_yearly}",
+                    "address": "${form.address}",
+                    "inspection_fee": "${form.inspection_fee}"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "INSPECTION_BOOKING_SCREEN",
+      "title": "Book Property Inspection",
+      "data": {},
+      "layout": {
+        "type": "SingleColumnLayout",
+        "children": [
+          {
+            "type": "Form",
+            "name": "booking_form",
+            "children": [
+              {
+                "type": "RadioButtonsGroup",
+                "name": "inspection_type",
+                "label": "Choose Inspection Method",
+                "required": true,
+                "data-source": [
+                  { "id": "virtual", "title": "Live Video Tour (₦4,000)", "description": "Inspect remotely via live video call" },
+                  { "id": "physical", "title": "Physical On-Site Visit (₦6,000)", "description": "Meet verified agent in person" }
+                ]
+              },
+              {
+                "type": "DatePicker",
+                "name": "preferred_date",
+                "label": "Preferred Inspection Date",
+                "required": true
+              },
+              {
+                "type": "Dropdown",
+                "name": "preferred_time",
+                "label": "Preferred Time Slot",
+                "required": true,
+                "data-source": [
+                  { "id": "10:00 AM", "title": "10:00 AM" },
+                  { "id": "12:00 PM", "title": "12:00 PM" },
+                  { "id": "02:00 PM", "title": "02:00 PM" },
+                  { "id": "04:00 PM", "title": "04:00 PM" }
+                ]
+              },
+              {
+                "type": "Footer",
+                "label": "Proceed to Paystack",
+                "on-click-action": {
+                  "name": "complete",
+                  "payload": {
+                    "inspection_type": "${form.inspection_type}",
+                    "preferred_date": "${form.preferred_date}",
+                    "preferred_time": "${form.preferred_time}"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
