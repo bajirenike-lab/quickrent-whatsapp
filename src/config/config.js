@@ -29,9 +29,9 @@ module.exports = {
   WHATSAPP_ACCESS_TOKEN: process.env.WHATSAPP_ACCESS_TOKEN || '',
   WHATSAPP_VERIFY_TOKEN: process.env.WHATSAPP_VERIFY_TOKEN || 'quickrent_secret_verify_token',
 
-  // BotSailor / Webhook Relay (optional bridge if user prefers BotSailor number)
-  BOTSAILOR_API_TOKEN: process.env.BOTSAILOR_API_TOKEN || '',
-  BOTSAILOR_PHONE_NUMBER_ID: process.env.BOTSAILOR_PHONE_NUMBER_ID || '',
+  // BotSailor / Webhook Relay (Bridge for +234 911 900 2066)
+  BOTSAILOR_API_TOKEN: process.env.BOTSAILOR_API_TOKEN || '27718|oBgbD65CaptJNVsLJ5oi52lJFjrrlTF17IasMbvu74f26a2d',
+  BOTSAILOR_PHONE_NUMBER_ID: process.env.BOTSAILOR_PHONE_NUMBER_ID || '729382720254467',
 
   // Paystack Configuration
   PAYSTACK_SECRET_KEY: process.env.PAYSTACK_SECRET_KEY || 'sk_test_e79f12602cb1a05b4af0028199d048d759c8559b',
